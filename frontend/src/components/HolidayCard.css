@@ -1,0 +1,111 @@
+.holiday-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  margin: 12px 0;
+  background: #ffffffcc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.holiday-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.holiday-date {
+  background: #3b82f6;
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.holiday-date .day {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.holiday-date .month-year {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.holiday-info {
+  flex: 1;
+}
+
+.holiday-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #1e293b;
+}
+
+.holiday-info p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #334155;
+}
+
+.formatted-date {
+  font-style: italic;
+  color: #475569;
+}
+
+.tags {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* Optional: Color variation by category/tag */
+.tag.holiday {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+.tag.festival {
+  background-color: #ecfccb;
+  color: #166534;
+}
+.tag.national {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+.tag.optional {
+  background-color: #fce7f3;
+  color: #9d174d;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #ef4444;
+  transition: transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+  color: #dc2626;
+}

@@ -1,0 +1,89 @@
+/* src/index.css */
+
+/* CSS Variables for consistent theming */
+:root {
+  --color-bg: #eef1f5;
+  --color-text: #333333;
+  --color-primary: #007bff;
+  --color-primary-hover: #0056b3;
+  --color-button-bg: #e0e0e0;
+  --color-button-hover: #c7c7c7;
+  --border-radius: 4px;
+  --transition-duration: 0.3s;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Container centers content and limits width */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 30px;
+}
+
+/* Responsive padding for smaller devices */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px 20px;
+  }
+}
+
+.tabs {
+  /* Slight spacing below tabs */
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap; /* allow tabs to wrap for small screens */
+}
+
+.tabs button {
+  margin-right: 10px;
+  margin-bottom: 10px; /* added margin for wrapping rows */
+  padding: 10px 18px;
+  border: none;
+  background-color: var(--color-button-bg);
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  color: var(--color-text);
+  transition: background-color var(--transition-duration), color var(--transition-duration);
+  /* For better alignment */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover state for buttons */
+.tabs button:hover {
+  background-color: var(--color-button-hover);
+}
+
+/* Focus state for accessibility */
+.tabs button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Active tab styling */
+.tabs button.active {
+  background-color: var(--color-primary);
+  color: white;
+  cursor: default;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.4);
+}
+
+/* Responsive font size & padding for small screens */
+@media (max-width: 480px) {
+  .tabs button {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}

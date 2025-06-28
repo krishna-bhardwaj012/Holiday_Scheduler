@@ -1,0 +1,144 @@
+/* src/components/AddHolidayForm.css */
+
+.form-container {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  padding: 32px;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  max-width: 700px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.03), transparent);
+  transition: left 0.8s ease;
+}
+
+.form-container:hover::before {
+  left: 100%;
+}
+
+.form-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  border-color: rgba(79, 70, 229, 0.3);
+}
+
+.form-container h2 {
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1e293b 0%, #4f46e5 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.form-container h2::before {
+  content: '🎉';
+  font-size: 1.5rem;
+  background: none;
+  -webkit-text-fill-color: unset;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+  align-items: stretch;
+}
+
+.form-row input,
+.form-row select {
+  padding: 16px 20px;
+  font-size: 15px;
+  border: 2px solid rgba(226, 232, 240, 0.8);
+  border-radius: 12px;
+  flex: 1;
+  min-width: 200px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+  transform: translateY(-1px);
+}
+
+.form-row input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.form-row button {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  flex: 0 0 auto;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.form-row button::before {
+  content: '✨';
+  font-size: 16px;
+}
+
+.form-row button:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(79, 70, 229, 0.4);
+}
+
+.form-row button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .form-container {
+    padding: 24px;
+    margin: 16px 0;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .form-row input,
+  .form-row select,
+  .form-row button {
+    min-width: 100%;
+  }
+}
