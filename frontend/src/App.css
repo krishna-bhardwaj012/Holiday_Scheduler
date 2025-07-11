@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: linear-gradient(135deg, #84bef8 0%, #7db0f4 100%);
   color: #1e293b;
   line-height: 1.6;
   min-height: 100vh;
@@ -24,7 +24,7 @@ body {
 h1 {
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, #1c243d 0%, #7c3aed 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -84,13 +84,13 @@ h1 + p {
 }
 
 .tabs button:hover {
-  color: #4f46e5;
+  color: #030128;
   transform: translateY(-1px);
 }
 
 .tabs button.active {
   background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-  color: white;
+  color: rgb(23, 1, 1);
   box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
   transform: translateY(-2px);
 }
@@ -99,7 +99,7 @@ h1 + p {
 .app-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 30px;
+  gap: 50px;
   margin-top: 30px;
   animation: fadeInUp 0.6s ease-out;
 }
@@ -108,15 +108,49 @@ h1 + p {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.442);
   border-radius: 20px;
-  border: 1px solid rgba(226, 232, 240, 0.6);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(25, 73, 135, 0.6);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.285);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   overflow: hidden;
   padding: 20px;
 }
+/* NAVIGATION BUTTONS */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  text-decoration: none;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  color: #1e293b;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  border: 2px solid transparent;
+}
+
+.nav-btn:hover {
+  background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+  transform: translateY(-2px);
+}
+
+.nav-btn.active {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  border: 2px solid #4f46e5;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+  transform: translateY(-2px);
+}
+
 
 .right-panel {
   display: flex;
@@ -137,8 +171,8 @@ h1 + p {
   flex: 1;
   padding: 14px 18px;
   border-radius: 12px;
-  border: 2px solid #e2e8f0;
-  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #58759b;
+  background: rgba(255, 255, 255, 0.378);
   font-size: 15px;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -146,14 +180,14 @@ h1 + p {
 
 .search-export input:focus {
   outline: none;
-  border-color: #4f46e5;
+  border-color: #2d26aa;
   box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
   transform: translateY(-1px);
 }
 
 .search-export button {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  border: 2px solid #cbd5e1;
+  background: linear-gradient(135deg, #f9f8fc 0%, #e2e8f0 100%);
+  border: 2px solid #e1cbdb;
   padding: 14px 20px;
   border-radius: 12px;
   cursor: pointer;
@@ -164,7 +198,7 @@ h1 + p {
 }
 
 .search-export button:hover {
-  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  background: linear-gradient(135deg, #e5e2f0 0%, #cbd5e1 100%);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
@@ -190,7 +224,7 @@ h1 + p {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(225, 225, 225, 0.95), transparent);
   transition: left 0.5s ease;
 }
 
@@ -200,20 +234,20 @@ h1 + p {
 
 .holiday-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  border-color: rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-color: 1px solid rgba(226, 232, 240, 0.6);
 }
 
 .holiday-card h4 {
   margin: 12px 0 8px;
   font-size: 20px;
-  color: #0f172a;
+  color: #071536;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
 .holiday-card p {
-  color: #64748b;
+  color: #152841;
   font-size: 15px;
   margin-bottom: 8px;
   line-height: 1.5;
@@ -222,7 +256,7 @@ h1 + p {
 .holiday-card .date {
   font-weight: 800;
   font-size: 28px;
-  background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, #213364 0%, #260d51 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -250,8 +284,8 @@ h1 + p {
 
 .badge.special {
   background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
-  color: #7c3aed;
-  border: 1px solid rgba(124, 58, 237, 0.2);
+  color: #2c1752;
+  border: 1px solid rgba(193, 171, 230, 0.2);
 }
 
 .badge.international {

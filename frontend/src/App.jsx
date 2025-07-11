@@ -11,7 +11,7 @@ import {
   getHOLIDAY_DAYS_LIST,
   getSpecialHolidays,
   addSpecialHoliday,
-  getExternalHolidays, // ✅ External holidays fetcher
+  getExternalHolidays,
 } from "./services/holidayService";
 
 import "./App.css";
@@ -87,21 +87,21 @@ function App() {
         <button onClick={handleLoadExternal}>🌍 Load External Holidays</button>
       </div>
 
-      {/* Navigation Tabs */}
-      <nav className="nav-tabs">
-        <NavLink to="/" end className={({ isActive }) => (isActive ? "tab active" : "tab")}>
+      {/* ✅ Navigation Tabs as Buttons */}
+      <div className="nav-buttons">
+        <NavLink to="/" end className={({ isActive }) => (isActive ? "nav-btn active" : "nav-btn")}>
           All
         </NavLink>
-        <NavLink to="/upcoming" className={({ isActive }) => (isActive ? "tab active" : "tab")}>
+        <NavLink to="/upcoming" className={({ isActive }) => (isActive ? "nav-btn active" : "nav-btn")}>
           Upcoming
         </NavLink>
-        <NavLink to="/stats" className={({ isActive }) => (isActive ? "tab active" : "tab")}>
+        <NavLink to="/stats" className={({ isActive }) => (isActive ? "nav-btn active" : "nav-btn")}>
           Statistics
         </NavLink>
-        <NavLink to="/add" className={({ isActive }) => (isActive ? "tab active" : "tab")}>
+        <NavLink to="/add" className={({ isActive }) => (isActive ? "nav-btn active" : "nav-btn")}>
           Add Special
         </NavLink>
-      </nav>
+      </div>
 
       {/* Routes */}
       <Routes>
@@ -133,7 +133,7 @@ function App() {
             <HolidayStats
               holidays={holidayList}
               specialHolidays={specialHolidayList}
-              externalHolidays={externalHolidayList} // ✅ Corrected here
+              externalHolidays={externalHolidayList}
             />
           }
         />
