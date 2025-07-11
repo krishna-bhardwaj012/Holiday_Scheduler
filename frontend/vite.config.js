@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
-  base: './', // 👈 ✅ Important for Vercel SPA
+  base: '/', // ✅ this is correct for Vercel
   plugins: [react()],
   resolve: {
     alias: {
