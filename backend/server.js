@@ -4,13 +4,13 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
+// Load environment variables from .env file
+dotenv.config();
+
 // Route files
 const holidayRoutes = require('./routes/holidayRoutes');
 const specialHolidayRouter = require('./routes/specialHolidayRouter');
-const externalHolidayRouter = require('./routes/externalHolidays'); // NEW
-
-// Load environment variables from .env file
-dotenv.config();
+const externalHolidayRouter = require('./routes/externalHolidays');
 
 const app = express();
 const PORT = process.env.PORT || 3500;
@@ -22,14 +22,15 @@ app.use(express.json());
 // API Routes
 app.use('/api/holiday_days_list', holidayRoutes);
 app.use('/api/special_user_holiday', specialHolidayRouter);
-app.use('/api/external-holidays', externalHolidayRouter); // Calendarific API route
+app.use('/api/external_holidays', externalHolidayRouter);
 
-// Root route
-app.get("/", (req, res) => {
-  res.send("🎉 Holiday Scheduler API is running!");
+// Root Route
+app.get('/', (req, res) => {
+  res.send('🎉 Holiday Scheduler API is running!');
 });
 
-// Start the server
+// Start Server
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`🌐 Visit: http://localhost:${PORT}`);
 });

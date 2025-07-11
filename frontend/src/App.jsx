@@ -1,3 +1,4 @@
+// App.jsx or App.js
 import React, { useEffect, useState } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 
@@ -60,10 +61,8 @@ function App() {
     <div className="container">
       <h1>🗓️ Holiday Scheduler</h1>
 
-      {/* ✅ Search Bar */}
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-      {/* ✅ Country + Year Filter */}
       <div className="filter-controls">
         <label>
           Country:
@@ -87,7 +86,6 @@ function App() {
         <button onClick={handleLoadExternal}>🌍 Load External Holidays</button>
       </div>
 
-      {/* ✅ Navigation Tabs as Buttons */}
       <div className="nav-buttons">
         <NavLink to="/" end className={({ isActive }) => (isActive ? "nav-btn active" : "nav-btn")}>
           All
@@ -103,7 +101,6 @@ function App() {
         </NavLink>
       </div>
 
-      {/* Routes */}
       <Routes>
         <Route
           path="/"
